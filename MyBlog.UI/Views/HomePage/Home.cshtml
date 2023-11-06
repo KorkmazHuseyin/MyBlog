@@ -1,0 +1,121 @@
+﻿@model List<MyBlogCore.DTO.ArticleDTO>
+@{
+    ViewData["Title"] = "Home";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<!doctype html>
+<html lang="tr">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <title>Blog Sayfam</title>
+</head>
+<body>
+    <div class="container">
+        <br />
+        <div class="row">
+            <div class="col-md-8">
+                <!-- Makale Listesi-->
+                @foreach (var item in Model)
+                {
+                    <div class="card-group">
+                        <div class="card">
+                            <img src="~/Images/@item.Photo" height="400" />
+                            <div class="card-body">
+                                <h5 class="card-title">@item.Header</h5>
+                                <p class="card-text">@item.Description</p>
+                                <a href="/HomePage/ArticleDetail/@item.Id" class=" btn btn-primary">Devamını oku..</a>
+                            </div>
+                            <div class="card-footer">
+                                @if (item != null)
+                                {
+                                    <small class="text-body-secondary">
+                                        <i class="bi bi-clock" style="font-size:20px"></i> @item.EditionTime.ToString("dd-MM-yyyy")
+                                        <i class="bi bi-eye" style="font-size:20px"></i> @item.ViewCount Görüntüleme
+                                        -- <i class="bi bi-chat" style="font-size:20px"></i>
+                                        @(item.Comment != null ? item.Comment.Count : 0) Yorum
+                                    </small>
+                                }
+
+                            </div>
+                        </div>
+
+                    </div>
+                    <br />
+                 }
+            </div>
+            <div class="col-md-4">
+                <!-- Kategori Listesi-->
+                <div class="list-group">
+                    <a href="#" class="list-group-item list-group-item-action active" aria-current="true">
+                        Tüm Kategoriler
+                    </a>
+                    <a href="#" class="list-group-item list-group-item-action"> Kategori A </a>
+                    <a href="#" class="list-group-item list-group-item-action"> Kategori B </a>
+                    <a href="#" class="list-group-item list-group-item-action"> Kategori C </a>
+                </div>
+                <br />
+                <h6 style="color:darkblue">  En Çok Okunan Makaleler  </h6>
+                <div class="card mb-3" style="max-width: 355px;">
+                    <div class="row g-0">
+                        <div class="col-md-4">
+                            <img src="~/Images/coding.jpg" class="img-fluid rounded-start" alt="..." width="150" height="150">
+                        </div>
+                        <div class="col-md-8">
+                            <div class="card-body">
+                                <p class="card-text"> Başlık </p>
+                            </div>
+                        </div>
+                        <div class="card-footer">
+                            <small class="text-body-secondary"><i class="bi bi-clock" style="font-size:20px"></i> Tarih--<i class="bi bi-eye" style="font-size:20px"></i> 10 Görüntüleme </small>
+                        </div>
+                    </div>
+                </div>
+                <div class="card mb-3" style="max-width: 355px;">
+                    <div class="row g-0">
+                        <div class="col-md-4">
+                            <img src="~/Images/coding2.jpg" class="img-fluid rounded-start" alt="..." width="150" height="150">
+                        </div>
+                        <div class="col-md-8">
+                            <div class="card-body">
+                                <p class="card-text"> Başlık </p>
+                            </div>
+                        </div>
+                        <div class="card-footer">
+                            <small class="text-body-secondary"><i class="bi bi-clock" style="font-size:20px"></i> Tarih--<i class="bi bi-eye" style="font-size:20px"></i> 10 Görüntüleme </small>
+                        </div>
+                    </div>
+                </div>
+                <div class="card mb-3" style="max-width: 355px;">
+                    <div class="row g-0">
+                        <div class="col-md-4">
+                            <img src="~/Images/coding3.jpg" class="img-fluid rounded-start" alt="..." width="150" height="150">
+                        </div>
+                        <div class="col-md-8">
+                            <div class="card-body">
+                                <p class="card-text"> Başlık </p>
+                            </div>
+                        </div>
+                        <div class="card-footer">
+                            <small class="text-body-secondary"><i class="bi bi-clock" style="font-size:20px"></i> Tarih--<i class="bi bi-eye" style="font-size:20px"></i> 10 Görüntüleme </small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+
+
+
+
+
+
+
+
+

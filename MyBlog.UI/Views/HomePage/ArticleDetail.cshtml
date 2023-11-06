@@ -1,0 +1,86 @@
+﻿
+@{
+    ViewData["Title"] = "ArticleDetail";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container">
+    <br />
+    <div class="row">
+        <div class="col-md-8">
+            <!-- Makale Listesi-->
+            <div class="card-group">
+                <div class="card">
+                    <img src="/Images/@ViewBag.article.Photo" alt="Alternate Text" height="500" />
+                    <div class="card-body">
+                        <h5 class="card-title">@ViewBag.article.Header </h5>
+                        <p class="card-text"> @ViewBag.article.Description</p>
+
+                    </div>
+
+                </div>
+
+            </div>
+            <br />
+        </div>
+        <div class="col-md-4">
+            <!-- Kategori Listesi-->
+            <div class="list-group">
+                <a href="#" class="list-group-item list-group-item-action active" aria-current="true">
+                    Tüm Kategoriler
+                </a>
+                <a href="#" class="list-group-item list-group-item-action"> Kategori A </a>
+                <a href="#" class="list-group-item list-group-item-action"> Kategori B </a>
+                <a href="#" class="list-group-item list-group-item-action"> Kategori C </a>
+            </div>
+            <br />
+            <h6 style="color:darkblue">  En Çok Okunan Makaleler  </h6>
+            <div class="card mb-3" style="max-width: 355px;">
+                <div class="row g-0">
+                    <div class="col-md-4">
+                        <img src="~/Images/coding.jpg" class="img-fluid rounded-start" alt="..." width="90" height="90">
+                    </div>
+                    <div class="col-md-8">
+                        <div class="card-body">
+                            <p class="card-text"> Başlık </p>
+                        </div>
+                    </div>
+                    <div class="card-footer">
+                        <small class="text-body-secondary"><i class="bi bi-clock" style="font-size:20px"></i> Tarih--<i class="bi bi-eye" style="font-size:20px"></i> 10 Görüntüleme </small>
+                    </div>
+                </div>
+            </div>
+            <div class="card mb-3" style="max-width: 355px;">
+                <div class="row g-0">
+                    <div class="col-md-4">
+                        <img src="~/Images/coding2.jpg" class="img-fluid rounded-start" alt="..." width="90" height="90">
+                    </div>
+                    <div class="col-md-8">
+                        <div class="card-body">
+                            <p class="card-text"> Başlık </p>
+                        </div>
+                    </div>
+                    <div class="card-footer">
+                        <small class="text-body-secondary"><i class="bi bi-clock" style="font-size:20px"></i> Tarih--<i class="bi bi-eye" style="font-size:20px"></i> 10 Görüntüleme </small>
+                    </div>
+                </div>
+            </div>
+            <div class="card mb-3" style="max-width: 355px;">
+                <div class="row g-0">
+                    <div class="col-md-4">
+                        <img src="~/Images/coding3.jpg" class="img-fluid rounded-start" alt="..." width="90" height="90">
+                    </div>
+                    <div class="col-md-8">
+                        <div class="card-body">
+                            <p class="card-text"> Başlık </p>
+                        </div>
+                    </div>
+                    <div class="card-footer">
+                        <small class="text-body-secondary"><i class="bi bi-clock" style="font-size:20px"></i> Tarih--<i class="bi bi-eye" style="font-size:20px"></i> 10 Görüntüleme </small>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
